@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: obouizi <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: obouizi <obouizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/22 11:36:00 by obouizi           #+#    #+#             */
-/*   Updated: 2024/10/26 14:31:13 by obouizi          ###   ########.fr       */
+/*   Created: 2024/10/24 17:52:19 by obouizi           #+#    #+#             */
+/*   Updated: 2024/11/25 20:32:34 by obouizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_isalnum(int c)
+int	ft_toupper(int c)
 {
-	return (ft_isdigit(c) || ft_isalpha(c));
+	if (c >= 'a' && c <= 'z')
+		c -= 32;		
+	return (c);
 }

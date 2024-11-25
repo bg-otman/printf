@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: obouizi <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: obouizi <obouizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/01 14:26:29 by obouizi           #+#    #+#             */
-/*   Updated: 2024/11/09 11:29:04 by obouizi          ###   ########.fr       */
+/*   Created: 2024/11/25 16:12:06 by obouizi           #+#    #+#             */
+/*   Updated: 2024/11/25 16:13:03 by obouizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libftprintf.h"
 
-t_list	*ft_lstnew(void *content)
+int ft_putptr(va_list args)
 {
-	t_list	*new_node;
-
-	new_node = (t_list *) malloc(sizeof(t_list));
-	if (new_node == NULL)
-		return (NULL);
-	new_node->next = NULL;
-	new_node->content = content;
-	return (new_node);
+    
 }

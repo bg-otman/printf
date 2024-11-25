@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_puthex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: obouizi <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: obouizi <obouizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/22 14:54:47 by obouizi           #+#    #+#             */
-/*   Updated: 2024/10/26 14:40:02 by obouizi          ###   ########.fr       */
+/*   Created: 2024/11/25 17:42:43 by obouizi           #+#    #+#             */
+/*   Updated: 2024/11/25 20:53:47 by obouizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libftprintf.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+int ft_puthex(int nb, char *hex)
 {
-	size_t			i;
-	unsigned char	*ptr;
-
-	i = 0;
-	ptr = b;
-	while (i < len)
-	{
-		*ptr = (unsigned char) c;
-		i++;
-		ptr++;
-	}
-	return (b);
+    int count;
+    
+    count = 0;
+    if (nb >= 16)
+        ft_puthex(nb / 16, hex);
+    count += ft_putchar_fd(hex[nb % 16]);
+    return (count);
 }

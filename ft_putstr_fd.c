@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouizi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/25 12:07:33 by obouizi           #+#    #+#             */
-/*   Updated: 2024/11/02 15:55:48 by obouizi          ###   ########.fr       */
+/*   Created: 2024/10/29 17:52:48 by obouizi           #+#    #+#             */
+/*   Updated: 2024/10/29 17:57:06 by obouizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libftprintf.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+int	ft_putstr_fd(char *s)
 {
-	size_t	i;
-	size_t	j;
+	int count;
 
-	if (!*needle)
-		return ((char *) haystack);
-	i = 0;
-	while ((i < len) && haystack[i])
+	count = 0;
+	if (!s)
+		return (0);
+	while (*s)
 	{
-		j = 0;
-		while (needle[j] && needle[j] == haystack[i + j] && (i + j) < len)
-			j++;
-		if (needle[j] == '\0')
-			return ((char *)(&haystack[i]));
-		i++;
+		count += write(1, s, 1);
+		s++;
 	}
-	return (NULL);
+	return (count);
 }
