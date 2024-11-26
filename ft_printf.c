@@ -6,7 +6,7 @@
 /*   By: obouizi <obouizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 12:52:20 by obouizi           #+#    #+#             */
-/*   Updated: 2024/11/25 20:53:59 by obouizi          ###   ########.fr       */
+/*   Updated: 2024/11/26 10:24:58 by obouizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,11 @@ int check_specifier(char c, va_list args)
 		len += ft_puthex(va_arg(args, int), "0123456789abcdef");
 	else if (c == 'X')
 		len += ft_puthex(va_arg(args, int), "0123456789ABCDEF");
+	else if (c == 'u')
+		len += ft_putunsint((va_arg(args, unsigned int)));
+	else if (c == 'p')
+		len += ft_putadresse((va_arg(args, unsigned long long)));
+		// len++;
 	
 
 	return (len);
@@ -61,19 +66,21 @@ int ft_printf(const char *str, ...)
 	return (printlen);
 }
 ////
-int main()
-{
-	int n1;
-	int n2;
-	// char str[] = "hello";
-	
-	// int o = 1052;
-	n1 = ft_printf("%x", 1052);
-	printf("\n");
-	n2 = printf("%x", 1052);
-	// printf("\n");
-	printf("n1 : %d\n", n1);
-	printf("n2 : %d\n", n2);
 
-	return 0;
-}
+// int main()
+// {
+// 	int n1;
+// 	// int n2;
+// 	// // char str[] = "hello";
+	
+// 	// // int o = 1052;
+// 	n1 = ft_printf("copy : %p", 10);
+// 	printf("\n");
+// 	// n2 = printf("orgn : %d", 10);
+// 	// printf("orgn : %p", 10);
+// 	// printf("\n------\n");
+// 	printf("copy : %d\n", n1);
+// 	// printf("orgn : %d\n", n2);
+
+// 	return 0;
+// }

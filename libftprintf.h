@@ -6,7 +6,7 @@
 /*   By: obouizi <obouizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 15:14:01 by obouizi           #+#    #+#             */
-/*   Updated: 2024/11/25 20:53:53 by obouizi          ###   ########.fr       */
+/*   Updated: 2024/11/26 10:24:11 by obouizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int	    ft_putchar_fd(char c);
 int	    ft_putnbr_fd(int n);
 int	    ft_putstr_fd(char *s);
 int     ft_puthex(int nb, char *hex);
+int     ft_putadresse(long long nb);
+int     ft_putunsint(unsigned int nb);
 size_t	ft_strlen(const char *s);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
