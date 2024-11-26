@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: obouizi <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: obouizi <obouizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/29 17:52:48 by obouizi           #+#    #+#             */
-/*   Updated: 2024/10/29 17:57:06 by obouizi          ###   ########.fr       */
+/*   Created: 2024/10/29 10:32:19 by obouizi           #+#    #+#             */
+/*   Updated: 2024/11/26 15:47:33 by obouizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int	ft_putstr_fd(char *s)
+int	ft_putchar(char c)
 {
-	int count;
-
-	count = 0;
-	if (!s)
-		return (0);
-	while (*s)
-	{
-		count += write(1, s, 1);
-		s++;
-	}
-	return (count);
+	return (write(1, &c, 1));
 }

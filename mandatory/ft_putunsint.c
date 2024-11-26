@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_putunsint.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: obouizi <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: obouizi <obouizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/24 17:59:50 by obouizi           #+#    #+#             */
-/*   Updated: 2024/10/26 14:52:33 by obouizi          ###   ########.fr       */
+/*   Created: 2024/11/26 09:10:52 by obouizi           #+#    #+#             */
+/*   Updated: 2024/11/26 15:48:10 by obouizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
+#include "libftprintf.h"
+
+int ft_putunsint(unsigned int nb)
 {
-	if (c >= 'A' && c <= 'Z')
-		c += 32;
-	return (c);
+    int count;
+
+	count = 0;
+	if (nb >= 10)
+		count += ft_putunsint(nb / 10);
+	count += ft_putchar((nb % 10) + '0');
+	return (count);
 }

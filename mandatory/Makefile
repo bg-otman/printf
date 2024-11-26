@@ -1,4 +1,4 @@
-SRCS =  ft_strlen.c ft_tolower.c ft_toupper.c ft_putchar_fd.c ft_putstr_fd.c ft_putnbr_fd.c ft_printf.c ft_puthex.c ft_putunsint.c ft_putadresse
+SRCS =  ft_strlen.c ft_putchar.c ft_putstr.c ft_putnbr.c ft_printf.c ft_puthex.c ft_putunsint.c ft_putadresse.c
 OBJECTS = $(SRCS:.c=.o)
 CC = cc
 CFLAGS = -Wall -Wextra -Werror

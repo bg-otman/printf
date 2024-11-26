@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_puthex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouizi <obouizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/24 17:52:19 by obouizi           #+#    #+#             */
-/*   Updated: 2024/11/25 20:32:34 by obouizi          ###   ########.fr       */
+/*   Created: 2024/11/25 17:42:43 by obouizi           #+#    #+#             */
+/*   Updated: 2024/11/26 15:47:40 by obouizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int c)
+#include "libftprintf.h"
+
+int ft_puthex(unsigned int nb, char *hex)
 {
-	if (c >= 'a' && c <= 'z')
-		c -= 32;		
-	return (c);
+    int count;
+    
+    count = 0;
+    if (nb >= 16)
+        count += ft_puthex(nb / 16, hex);
+    count += ft_putchar(hex[nb % 16]);
+    return (count);
 }
